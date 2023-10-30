@@ -59,13 +59,13 @@ function ListTodo() {
                 type="checkbox"
                 checked={todo.completed}
                 onChange={() => handleComplete(todo.id)}
-                className="mx-2 p-1"
+                className="mr-2"
               />
               <div className="flex items-center justify-center w-full">
                 {editableId === todo.id ? (
                   <div className="flex items-left w-full">
                     <input
-                      className="flex border-2 rounded-md p-1 mr-2"
+                      className="flex mr-2 w-[50%]"
                       type="text"
                       value={editableValue}
                       onChange={(e) => setEditableValue(e.target.value)}
