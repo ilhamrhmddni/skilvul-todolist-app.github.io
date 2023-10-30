@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { delTodo, comTodo, editTodo } from "../redux/reducers/todo-reducer";
-import { BsTrashFill, BsCheckSquare, BsXSquare } from "react-icons/bs";
+import { BsTrashFill, BsCheckSquare, BsXSquare, BsPencilSquare } from "react-icons/bs";
 
 function ListTodo() {
   const dispatch = useDispatch();
@@ -65,7 +65,7 @@ function ListTodo() {
                 {editableId === todo.id ? (
                   <div className="flex items-left w-full">
                     <input
-                      className="flex mr-2"
+                      className="flex mr-2 xs:max-w-[30%] md:max-w-[50%]"
                       type="textfield"
                       value={editableValue}
                       onChange={(e) => setEditableValue(e.target.value)}
@@ -80,13 +80,13 @@ function ListTodo() {
                     </div>
                   </div>
                 ) : (
-                  <p className={`font-semibold ${todo.completed ? "line-through" : ""} xs:min-w-[50%] md:max-w-[100%]`}>{todo.value}</p>
+                  <p className={`font-semibold ${todo.completed ? "line-through" : ""} xs:max-w-[30%] md:max-w-[50%]`}>{todo.value}</p>
                 )}
               </div>
             </div>
             <div className="flex items-center">
               <button className="mx-1" onClick={() => handleEdit(todo.id, todo.value)}>
-                {editableId === todo.id ? "" : "Edit"}
+                {editableId === todo.id ? "" : <BsPencilSquare size="1.5rem"/>}
               </button>
               <button onClick={() => handleDelete(todo.id)} className="mx-1 text-red-500 cursor-pointer">
                 <BsTrashFill size="1.5rem" />
