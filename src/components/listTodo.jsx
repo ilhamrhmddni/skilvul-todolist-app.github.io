@@ -65,7 +65,7 @@ function ListTodo() {
                 {editableId === todo.id ? (
                   <div className="flex items-left w-full">
                     <input
-                      className="flex mr-2 xs:max-w-[30%] md:max-w-[50%]"
+                      className="flex mr-2 w-[50%] xl:w-[100%]"
                       type="textfield"
                       value={editableValue}
                       onChange={(e) => setEditableValue(e.target.value)}
@@ -80,7 +80,7 @@ function ListTodo() {
                     </div>
                   </div>
                 ) : (
-                  <p className={`font-semibold ${todo.completed ? "line-through" : ""} xs:max-w-[30%] md:max-w-[50%]`}>{todo.value}</p>
+                  <p className={`font-semibold ${todo.completed ? "line-through" : ""}`}>{todo.value}</p>
                 )}
               </div>
             </div>
