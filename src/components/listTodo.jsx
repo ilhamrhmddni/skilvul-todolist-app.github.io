@@ -61,12 +61,12 @@ function ListTodo() {
                 onChange={() => handleComplete(todo.id)}
                 className="mr-2"
               />
-              <div className="flex items-center justify-center w-full">
+              <div className="flex items-center justify-left w-full">
                 {editableId === todo.id ? (
                   <div className="flex items-left w-full">
                     <input
-                      className="flex mr-2 w-[50%]"
-                      type="text"
+                      className="flex mr-2"
+                      type="textfield"
                       value={editableValue}
                       onChange={(e) => setEditableValue(e.target.value)}
                     />
@@ -75,12 +75,12 @@ function ListTodo() {
                         <BsCheckSquare size="1.5rem" />
                       </button>
                       <button onClick={handleCancelEdit} className="text-red-500 cursor-pointer">
-                        <BsXSquare size="1.5rem" />
+                        <BsXSquare size="1.5rem" className="abso" />
                       </button>
                     </div>
                   </div>
                 ) : (
-                  <p className={`font-semibold ${todo.completed ? "line-through" : ""}`}>{todo.value}</p>
+                  <p className={`font-semibold ${todo.completed ? "line-through" : ""} xs:min-w-[50%] md:max-w-[100%]`}>{todo.value}</p>
                 )}
               </div>
             </div>
